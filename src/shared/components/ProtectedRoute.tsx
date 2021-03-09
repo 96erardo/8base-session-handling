@@ -21,7 +21,7 @@ export const ProtectedRoute: React.FC<Props> = ({ perform, component, ...rest })
           <Redirect
             to={{
               pathname: '/auth',
-              state: { from: routeProps.location }
+              state: { returnTo: routeProps.location.pathname }
             }}
           />
         )}
@@ -41,7 +41,7 @@ export const ProtectedRoute: React.FC<Props> = ({ perform, component, ...rest })
           <Redirect
             to={{
               pathname: '/auth',
-              state: { from: location }
+              state: { returnTo: location.pathname }
             }}
           />
         )
